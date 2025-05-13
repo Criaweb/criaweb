@@ -21,8 +21,9 @@
 }
 
 #cta .title span {
-    color: var(--color-primary-5); /* Exemplo de cor no span */
+    color: var(--color-rosapink); /* Exemplo de cor no span */
 }
+
 
 #cta .description {
     font-size: 1.2rem;
@@ -39,7 +40,7 @@
 
 #cta_buttons .btn-default {
     padding: 10px 20px;
-    background-color: var(--color-primary-5); /* Exemplo de cor */
+    background-color: var(--color-rosapink); /* Exemplo de cor */
     color: white; /* Cor do texto */
     border-radius: 12px;
     text-decoration: none;
@@ -73,7 +74,7 @@
 
 #banner img {
     width: 80%; /* Ajuste para a imagem ficar menor */
-    max-width: 500px; /* Tamanho máximo da imagem */
+    max-width: 600px; /* Tamanho máximo da imagem */
     height: auto;
 }
 

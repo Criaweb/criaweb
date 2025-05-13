@@ -11,7 +11,7 @@
     top: 0;
     left: 0;
     width: 100%; 
-    height: 100px; /
+    height: 100px;
 }
 
 /* Container dos Cards */
@@ -23,12 +23,13 @@
     width: 100%;
     max-width: 900px;
     padding: 20px;
+    flex-wrap: wrap; /* Para empilhar os cards na versão mobile */
 }
 
 /* Cards - Mais finos e mais compridos */
 .card {
-    width: 120px;  /* Mais fino */
-    height: 350px; /* Mais comprido */
+    width: 150px;  /* Começa mais estreito */
+    height: 380px; /* Menor altura */
     background-color: var(--color-neutral-0);
     color: var(--color-neutral-1);
     display: flex;
@@ -38,15 +39,73 @@
     text-align: center;
     border-radius: 20px;
     cursor: pointer;
-    transition: 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; /* Transição suave */
     overflow: hidden;
     position: relative;
 }
 
-/* Expande apenas o card que está com o mouse em cima */
-.card:hover {
-    width: 400px; /* Expande para o lado */
-    transform: scale(1.1);
+/* Expande os cards para cima e para o lado na versão mobile */
+@media (max-width: 767px) {
+    .card {
+        margin: 10px;
+    }
+
+    /* Alinha os cards verticalmente (empilhados) */
+    .container_pq {
+        flex-direction: column; /* Faz os cards empilharem verticalmente */
+        align-items: flex-start;
+    }
+
+    /* Card no estado normal - pequeno com o texto visível */
+    .card .content {
+        opacity: 1; /* Texto visível */
+        transition: opacity 0.3s ease-in-out; /* Transição para aparecer suavemente */
+    }
+
+    /* Quando o card é expandido (ao passar o mouse) */
+    .card:hover {
+        width: 310px;  /* Aumenta a largura do card */
+        height: 380px; /* Aumenta a altura */
+        transform: scale(1.05);  /* Dá um leve aumento para deixar o card mais "gordinho" */
+        z-index: 1; /* Coloca o card expandido por cima */
+    }
+
+    /* Esconde o título quando o card está expandido */
+    .card:hover h1 {
+        opacity: 0;
+    }
+    .content h2 {
+        color: var(--color-rosapink);
+
+    }
+
+    /* Exibe o conteúdo do card quando expandido */
+    .card:hover .content {
+        opacity: 1;
+    }
+}
+
+/* Versão Desktop */
+@media (min-width: 768px) {
+    .card:hover {
+        width: 250px; /* Aumenta a largura do card */
+        height: 350px; /* Mantém a altura para o desktop */
+        transform: scale(1.05); /* Leve aumento para o card */
+    }
+
+    /* Esconde o título quando o card está expandido */
+    .card:hover h1 {
+        opacity: 0;
+    }
+    .content h2 {
+        color: var(--color-rosapink);
+
+    }
+
+    /* Exibe o conteúdo do card quando expandido */
+    .card:hover .content {
+        opacity: 1;
+    }
 }
 
 /* Título na vertical */
@@ -55,30 +114,15 @@
     transform: rotate(180deg);
     transition: opacity 0.3s ease-in-out;
     font-size: 30px;
-    color: var(--color-primary-1);
-}
-
-/* Esconde o título quando o card está expandido */
-.card:hover h1 {
-    opacity: 0;
-}
-.content h2 {
-    color:var(--color-primary-3);
-    margin: 10px;
-    font-weight: 600;
+    color: var(--color-verde-7);
 }
 
 /* Conteúdo do card */
 .card .content {
     position: absolute;
-    opacity: 0;
+    opacity: 0; /* Inicialmente invisível */
     text-align: center;
     padding: 10px;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out; /* Transição suave para o conteúdo */
     width: 100%;
-}
-
-/* Exibe o conteúdo apenas no card expandido */
-.card:hover .content {
-    opacity: 1;
 }

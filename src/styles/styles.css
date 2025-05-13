@@ -16,6 +16,8 @@
     --color-primary-4: #d256af;
     --color-primary-5: #d256af;
     --color-primary-6: #c43b9d;
+    --color-verde-7: #7EF226;
+    --color-rosapink: #F962CA;
     --color-zinza: #3c3b3b;
     --color-fundo: #f9f9f9;
 
@@ -28,6 +30,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: left;
+  
 }
 
 html {
@@ -104,7 +108,7 @@ a {
 .whatsapp-button {
     position: fixed;
     bottom: 20px;
-    right: 35px;  /* Ajuste da posição para ficar mais afastado */
+    right: 25px;  /* Ajuste da posição para ficar mais afastado */
     background-color: transparent;
     border: none;
     z-index: 1000;
@@ -112,8 +116,8 @@ a {
 }
 
 .atendente-image {
-    width: 90px;  /* Tamanho da imagem */
-    height: 90px;
+    width: 65px;  /* Tamanho da imagem */
+    height: 65px;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(53, 52, 52, 0.565);
     cursor: pointer;
